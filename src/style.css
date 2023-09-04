@@ -1,0 +1,768 @@
+/** Font-family **/
+@font-face {
+  font-family: "Amazon Ember";
+  src: url("fonts/amazon-ember-regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Amazon Ember";
+  src: url("fonts/amazon-ember-bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Amazon Ember";
+  src: url("fonts/amazon-ember-italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/** Root **/
+* {
+  font-family: "Amazon Ember";
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #222;
+}
+
+/* Navbar Style */
+.navbar {
+  background-color: #222;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  height: 40px;
+  box-shadow: 0px 0px 2px rgba(0, 255, 255, 0),
+    0px 2px 4px rgba(0, 255, 255, 0.5), 0px 4px 8px rgba(0, 255, 255, 0.5),
+    0px 8px 16px rgba(0, 255, 255, 0.5);
+}
+
+/* Navigation links Style */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.nav-links button {
+  color: #efb70f;
+  background-color: #222;
+  border: none;
+  padding: 2px 6px;
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.24rem;
+  font-weight: 550;
+}
+
+.nav-links button:hover {
+  color: #ffd700;
+}
+
+/* Input and Search Button Style */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  width: 25%;
+}
+
+/* Search Input Style */
+.search {
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  margin-right: 10px;
+  font-size: 0.9rem;
+  padding: 5px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Add a glow effect with animation on hover */
+.search:hover {
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+  transform: scale(1.02);
+}
+
+/* Search Button Style */
+.search-btn {
+  background-color: #efb70f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 17px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+
+/* Add a pressing effect when clicked */
+.search-btn:hover,
+.search-btn:active {
+  background-color: #e8af04f6;
+  transform: scale(0.98);
+}
+
+header {
+  background-color: #121212;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+  padding: 0.8rem 0;
+  cursor: pointer;
+  margin-bottom: 4px;
+}
+
+.glowing-btn {
+  position: relative;
+  color: var(--glow-color);
+  cursor: pointer;
+  padding: 0.35em 1em;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 0.45em;
+  background: none;
+  perspective: 2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.4em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  --glow-color: hsl(59, 88%, 47%);
+
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 2s linear infinite;
+}
+
+.glowing-txt {
+  float: left;
+  margin-right: -0.8em;
+  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  animation: text-flicker 3s linear infinite;
+  margin-right: 22px;
+}
+
+.faulty-letter {
+  opacity: 0.5;
+  animation: faulty-flicker 2s linear infinite;
+}
+
+.glowing-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  filter: blur(1em);
+  transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+  background: var(--glow-color);
+  pointer-events: none;
+}
+
+.glowing-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 2em 0.2em var(--glow-color);
+  transition: opacity 100ms linear;
+}
+
+.glowing-btn:hover {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 700;
+  text-shadow: none;
+  animation: none;
+}
+
+.glowing-btn:hover .glowing-txt {
+  animation: none;
+}
+
+.glowing-btn:hover .faulty-letter {
+  animation: none;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.glowing-btn:hover:before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+
+.glowing-btn:hover:after {
+  opacity: 1;
+}
+
+@keyframes faulty-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 0.1;
+  }
+  4% {
+    opacity: 0.5;
+  }
+  19% {
+    opacity: 0.5;
+  }
+  21% {
+    opacity: 0.1;
+  }
+  23% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  83% {
+    opacity: 0.4;
+  }
+
+  87% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  8% {
+    opacity: 0.1;
+  }
+
+  9% {
+    opacity: 1;
+  }
+
+  12% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+  72% {
+    opacity: 0.2;
+  }
+
+  77% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes border-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.1;
+  }
+
+  8% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+main {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  padding: 9px;
+  margin-top: 2px;
+}
+
+.movie-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  padding: 7px;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.movie-image {
+  max-height: 200px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.movie-content {
+  padding: 10px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.movie-description {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Aligned source,vote average & Readmore to bottom of the newscard */
+.movie-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-source {
+  font-size: 0.875rem;
+  color: #777;
+  margin-bottom: 0.2rem;
+}
+
+/* .movie-published-at {
+  font-size: 0.875rem;
+  color: #777;
+  margin-bottom: 0.4rem;
+} */
+
+/* CSS for different vote average colors */
+.movie-vote-average {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+.movie-vote-average.green {
+  color: green;
+}
+
+.movie-vote-average.orange {
+  color: orange;
+}
+
+.movie-vote-average.red {
+  color: red;
+}
+
+.read-more-link {
+  font-size: 1rem;
+  color: #007acc;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.read-more-link {
+  color: #005c99;
+}
+
+/* Footer styling */
+footer {
+  background-color: #121212;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-size: small;
+}
+
+.footer-content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.footer-content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Responsive Design for Smaller Screens (up to 600px) */
+@media screen and (max-width: 600px) {
+  header {
+    height: 50px;
+  }
+
+  .navbar {
+    height: 38px;
+  }
+
+  .search-container {
+    width: 215px;
+  }
+  .search {
+    font-size: 0.75rem;
+    margin-right: 8px;
+    height: 23px;
+  }
+
+  /* Search Button Style */
+  .search-btn {
+    font-size: 0.8rem;
+  }
+
+  .glowing-btn {
+    font-size: 0.84rem;
+    font-weight: 500;
+  }
+
+  .glowing-txt {
+    margin-right: 17px;
+  }
+
+  .nav-links button {
+    font-size: 1.1rem;
+    font-weight: 550;
+  }
+
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 5px;
+    max-width: 100%;
+  }
+
+  .movie-card {
+    max-width: 100%;
+  }
+
+  .movie-content {
+    padding: 10px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5px;
+  }
+
+  .footer-content {
+    padding: 0 10px;
+  }
+}
+
+/* Responsive Design for Medium Screens (601px to 1000px) */
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+  .navbar {
+    height: 50px;
+  }
+
+  .search-container {
+    width: 280px;
+  }
+  .search {
+    font-size: 0.95rem;
+    margin-right: 15px;
+  }
+
+  /* Search Button Style */
+  .search-btn {
+    font-size: 1.2rem;
+  }
+
+  .glowing-btn {
+    font-size: 1.18em;
+    font-weight: 500;
+  }
+
+  .nav-links button {
+    font-size: 1.34rem;
+    font-weight: 550;
+  }
+
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 5px;
+    max-width: 100%;
+  }
+
+  .movie-card {
+    max-width: 100%;
+  }
+
+  .movie-content {
+    padding: 10px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+
+  .footer-content {
+    padding: 0 10px;
+  }
+}
+
+/* Responsive Design for SmallScreens (Up to 390px) */
+@media screen and (max-width: 390px) {
+  header {
+    height: 40px;
+  }
+
+  .navbar {
+    height: 33px;
+  }
+
+  .search-container {
+    width: 195px;
+  }
+  .search {
+    font-size: 0.72rem;
+    margin-right: 6px;
+  }
+
+  /* Search Button Style */
+  .search-btn {
+    font-size: 0.85rem;
+  }
+
+  .glowing-btn {
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .nav-links button {
+    font-size: 1.07rem;
+    font-weight: 550;
+  }
+
+  .movie-card {
+    max-width: 100%;
+  }
+
+  .movie-content {
+    padding: 10px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    height: 5px;
+  }
+
+  .footer-content {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  header {
+    height: 38px;
+  }
+
+  .navbar {
+    height: 28px;
+  }
+
+  .search-container {
+    width: 175px;
+  }
+  .search {
+    font-size: 0.6rem;
+    margin-right: 6px;
+    height: 21px;
+  }
+
+  /* Search Button Style */
+  .search-btn {
+    font-size: 0.69rem;
+  }
+
+  .glowing-btn {
+    font-size: 0.68rem;
+    font-weight: 500;
+  }
+
+  .nav-links button {
+    font-size: 0.85rem;
+    font-weight: 550;
+  }
+
+  .movie-card {
+    max-width: 100%;
+  }
+
+  .movie-content {
+    padding: 10px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    height: 5px;
+  }
+
+  .footer-content {
+    padding: 0 10px;
+  }
+}
+
+/* Responsive Design for Extra SmallScreens (Up to 320px) */
+@media screen and (max-width: 320px) {
+  header {
+    height: 34px;
+  }
+
+  .navbar {
+    height: 27px;
+  }
+
+  .search-container {
+    width: 154px;
+  }
+
+  .search {
+    font-size: 0.56rem;
+    margin-right: 6px;
+    height: 18px;
+  }
+
+  /* Search Button Style */
+  .search-btn {
+    font-size: 0.52rem;
+  }
+
+  .glowing-btn {
+    font-size: 0.55rem;
+    font-weight: 500;
+  }
+
+  .nav-links button {
+    font-size: 0.7rem;
+    font-weight: 450;
+  }
+
+  .movie-card {
+    max-width: 100%;
+  }
+
+  .movie-content {
+    padding: 5px;
+  }
+
+  .movie-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .movie-description {
+    font-size: 0.8rem;
+    line-height: 1.35;
+    margin-bottom: 0.8rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    height: 5px;
+  }
+
+  .footer-content {
+    padding: 0 10px;
+  }
+}
