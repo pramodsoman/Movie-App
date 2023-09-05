@@ -28,13 +28,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+To learn React, check out the [React documentation](https://reactjs.org/).
+
 ## Contributing:
 - If you would like to contribute to the project, please fork the repository and submit a pull request with your changes.
 
 ## License:
 - This project is licensed under the MIT License.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
 
 
 
