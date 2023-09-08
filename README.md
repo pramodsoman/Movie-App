@@ -30,6 +30,14 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+## Contributing:
+- If you would like to contribute to the project, please fork the repository and submit a pull request with your changes.
+
+## License:
+- This project is licensed under the MIT License.
+
+
+
 
 
 
