@@ -1,6 +1,6 @@
 # Movie-App
 
-Welcome to Movie-App! This website allows you to make your movie discovery experience enjoyable and user-friendly. It provides a curated list of popular movies by default and allows you to search for specific movies matching your keywords.
+Welcome to Movie-App! This web application allows you to make your movie discovery experience enjoyable and user-friendly. It provides a curated list of popular movies by default and allows you to search for specific movies matching your keywords.
 
 ## Features
 
