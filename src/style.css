@@ -145,17 +145,20 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 65px;
+  height: 55px;
   padding: 0.8rem 0;
   cursor: pointer;
   margin-bottom: 4px;
+  box-shadow: 0px 0px 2px rgba(0, 255, 255, 0),
+    0px 2px 4px rgba(0, 255, 255, 0.5), 0px 4px 8px rgba(0, 255, 255, 0.5),
+    0px 8px 16px rgba(0, 255, 255, 0.5);
 }
 
 .glowing-btn {
   position: relative;
   color: var(--glow-color);
   cursor: pointer;
-  padding: 0.35em 1em;
+  padding: 0.25em 0.1em;
   border: 0.15em solid var(--glow-color);
   border-radius: 0.45em;
   background: none;
@@ -163,12 +166,12 @@ header {
   font-family: "Raleway", sans-serif;
   font-size: 1.4em;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 8px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   --glow-color: hsl(59, 88%, 47%);
 
   -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
@@ -182,14 +185,15 @@ header {
 
 .glowing-txt {
   float: left;
-  margin-right: -0.8em;
+  margin-right: 0.4em;
+  margin-left: 0.7rem;
   -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
     0 0 0.45em var(--glow-color);
   -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
     0 0 0.45em var(--glow-color);
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
   animation: text-flicker 3s linear infinite;
-  margin-right: 22px;
+  /* margin-right: 22px; */
 }
 
 .faulty-letter {
@@ -375,6 +379,8 @@ main {
   width: 100%;
   max-width: 400px;
   padding: 7px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
 }
 
 .movie-card:hover {
@@ -383,7 +389,7 @@ main {
 }
 
 .movie-image {
-  max-height: 200px;
+  max-height: 520px;
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -484,11 +490,11 @@ footer {
 /* Responsive Design for Smaller Screens (up to 600px) */
 @media screen and (max-width: 600px) {
   header {
-    height: 50px;
+    height: 37px;
   }
 
   .navbar {
-    height: 38px;
+    height: 30px;
   }
 
   .search-container {
@@ -511,7 +517,8 @@ footer {
   }
 
   .glowing-txt {
-    margin-right: 17px;
+    margin-right: 0.4em;
+    margin-left: 0.5rem;
   }
 
   .nav-links button {
@@ -705,11 +712,11 @@ footer {
 /* Responsive Design for Extra SmallScreens (Up to 320px) */
 @media screen and (max-width: 320px) {
   header {
-    height: 34px;
+    height: 30px;
   }
 
   .navbar {
-    height: 27px;
+    height: 24px;
   }
 
   .search-container {
@@ -719,7 +726,7 @@ footer {
   .search {
     font-size: 0.56rem;
     margin-right: 6px;
-    height: 18px;
+    height: 17px;
   }
 
   /* Search Button Style */
@@ -728,7 +735,7 @@ footer {
   }
 
   .glowing-btn {
-    font-size: 0.55rem;
+    font-size: 0.62rem;
     font-weight: 500;
   }
 
